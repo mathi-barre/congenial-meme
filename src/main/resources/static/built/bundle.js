@@ -34688,6 +34688,102 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/** @license MIT License (c) copyright 2010-20
 
 /***/ }),
 
+/***/ "./src/main/js/JuegoForm.js":
+/*!**********************************!*\
+  !*** ./src/main/js/JuegoForm.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+var JuegoForm =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(JuegoForm, _React$Component);
+
+  function JuegoForm() {
+    var _this;
+
+    _classCallCheck(this, JuegoForm);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(JuegoForm).call(this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(JuegoForm, [{
+    key: "handleSubmit",
+    value: function handleSubmit(event) {
+      event.preventDefault();
+      debugger;
+      var data = {
+        "nombre": event.target[0].value,
+        "minJugadores": event.target[1].value,
+        "maxJugadores": event.target[2].value
+      };
+      var body = JSON.stringify(data);
+      fetch('/juego', {
+        method: 'PUT',
+        body: body
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, React.createElement("div", null, React.createElement("label", {
+        htmlFor: "name"
+      }, "Ingresar nombre del juego"), React.createElement("input", {
+        id: "name",
+        name: "name",
+        type: "text"
+      })), React.createElement("div", null, React.createElement("label", {
+        htmlFor: "minPlayers"
+      }, "Ingresar minimo de jugadores"), React.createElement("input", {
+        id: "minPlayers",
+        name: "minPlayers",
+        type: "number"
+      })), React.createElement("div", null, React.createElement("label", {
+        htmlFor: "maxPlayers"
+      }, "Ingresar maximo de jugadores"), React.createElement("input", {
+        id: "maxPlayers",
+        name: "maxPlayers",
+        type: "number"
+      })), React.createElement("button", null, "Ingresar juego"));
+    }
+  }]);
+
+  return JuegoForm;
+}(React.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (JuegoForm);
+
+/***/ }),
+
 /***/ "./src/main/js/api/uriListConverter.js":
 /*!*********************************************!*\
   !*** ./src/main/js/api/uriListConverter.js ***!
@@ -34759,9 +34855,12 @@ var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (r
 /*!****************************!*\
   !*** ./src/main/js/app.js ***!
   \****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _JuegoForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./JuegoForm */ "./src/main/js/JuegoForm.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -34785,6 +34884,8 @@ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 
 var client = __webpack_require__(/*! ./client */ "./src/main/js/client.js");
+
+
 
 var App =
 /*#__PURE__*/
@@ -34820,9 +34921,9 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return React.createElement(GameList, {
+      return React.createElement("div", null, React.createElement(GameList, {
         games: this.state.games
-      });
+      }), React.createElement(_JuegoForm__WEBPACK_IMPORTED_MODULE_0__["default"], null));
     }
   }]);
 

@@ -1,6 +1,7 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const client = require('./client');
+import JuegoForm from './JuegoForm';
 
 class App extends React.Component {
 	
@@ -17,7 +18,7 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<GameList games={this.state.games}/>
+			<div><GameList games={this.state.games}/><JuegoForm/></div>
 		)
 	}
 }
