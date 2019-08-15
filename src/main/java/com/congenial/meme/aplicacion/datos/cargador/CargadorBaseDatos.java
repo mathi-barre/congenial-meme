@@ -1,18 +1,18 @@
-package com.congenial.meme.application.data.loader;
+package com.congenial.meme.aplicacion.datos.cargador;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.congenial.meme.application.games.model.GameRepository;
+import com.congenial.meme.aplicacion.juegos.modelo.RepositorioJuego;
 
 @Component
-public class DatabaseLoader implements CommandLineRunner {
+public class CargadorBaseDatos implements CommandLineRunner {
     
-    private final GameRepository gameRepository;
+    private final RepositorioJuego gameRepository;
     
     @Autowired
-    public DatabaseLoader(final GameRepository gameRepository) {
+    public CargadorBaseDatos(final RepositorioJuego gameRepository) {
         this.gameRepository = gameRepository;
     }
 

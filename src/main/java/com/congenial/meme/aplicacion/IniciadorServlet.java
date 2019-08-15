@@ -1,12 +1,12 @@
-package com.congenial.meme.application;
+package com.congenial.meme.aplicacion;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-public class ServletInitializer extends SpringBootServletInitializer {
+public class IniciadorServlet extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder applicationBuilder) {
-        return applicationBuilder.sources(Application.class);
+        return applicationBuilder.sources(Aplicacion.class);
     }
 }

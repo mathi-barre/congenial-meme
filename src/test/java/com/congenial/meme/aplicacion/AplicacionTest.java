@@ -1,4 +1,4 @@
-package com.congenial.meme.application;
+package com.congenial.meme.aplicacion;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ApplicationTest {
+public class AplicacionTest {
 
     @Test
     public void contextLoads() {
